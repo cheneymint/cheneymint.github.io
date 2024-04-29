@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=deviceWidth, initial-scale=1.0">
+    <title>Art Mood</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <style>
+        /* Global Styles */
+        body {
+            font-family: 'Playfair Display', serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+        }
+
+        /* Header Styles */
+        h1 {
+            color: #333;
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        /* Mood Selector Styles */
+        #moodSelector {
+            display: block;
+            margin: 0 auto 20px;
+            padding: 10px;
+            font-size: 16px;
+            border: 2px solid #333;
+            border-radius: 5px;
+            background-color: #fff;
+            transition: border-color 0.3s ease;
+        }
+
+        #moodSelector:hover {
+            border-color: #555;
+        }
+
+        /* Art Gallery Styles */
+        #artGallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 20px;
+            padding: 0 20px;
+            justify-items: center;
+        }
+
+        .artItem {
+            background-color: #fff;
+            padding: 10px;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .artItem:hover {
+            transform: translateY(-5px);
+        }
+
+        .artItem img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 5px;
+        }
+
+        /* Thumbnail Styles */
+        .thumbnail {
+            display: block;
+            max-width: 100%;
+            height: auto;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Discover Art by Your Mood</h1>
+
+    <select id="moodSelector" onchange="displayArt(this.value)">
+        <option value="">Select Your Mood</option>
+        <option value="joy">Joyful</option>
+        <option value="sadness">Sad</option>
+        <option value="tranquility">Tranquil</option>
+        <option value="anger">Angry</option>
+        <option value="love">In Love</option>
+        <option value="excitement">Excited</option>
+        <option value="fear">Scared</option>
+    </select>
+
+    <div id="artGallery"></div>
+
+    <script src="app.js"></script>
+</body>
+
+</html>
